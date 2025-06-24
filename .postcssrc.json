@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "@tailwindcss/postcss": {
+      "optimize": {
+        "minify": true
+      }
+    },
+    "postcss-import": {},
+    "autoprefixer": {},
+    "postcss-preset-env": {}
+  }
+}
