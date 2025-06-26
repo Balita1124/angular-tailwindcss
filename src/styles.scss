@@ -1,6 +1,30 @@
 @use "sass:meta";
-@use "tailwindcss";
+@use '@angular/material' as mat;
+@use 'tailwindcss';
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@use './styles/_tailwind';
+@use './styles/_sizes';
+@use './styles/_borders';
+@use './styles/_buttons';
+
+
+$heading-font-family: Poppins, sans-serif;
+$regular-font-family: Inter, sans-serif;
+
+@include sizes.sizes();
+
+html {
+  color-scheme: dark;
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: (
+      plain-family: #{meta.inspect($regular-font-family)},
+      brand-family: #{meta.inspect($heading-font-family)},
+    ),
+    density: 0
+  ));
+}
